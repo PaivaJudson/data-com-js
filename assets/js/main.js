@@ -1,6 +1,21 @@
 const h1 = document.querySelector(".container h1");
 const data = new Date();
 
+const opcoes = {
+    dateStyle: 'full',
+    timeStyle: 'short'
+};
+
+h1.innerHTML = data.toLocaleString('pt-BR', opcoes);
+
+
+
+
+/*
+
+const h1 = document.querySelector(".container h1");
+const data = new Date();
+
 h1.innerHTML = criarData(data);
 
 
@@ -90,3 +105,5 @@ function criarData(data) {
     return (`${nomeDiaSemana}, ${data.getDate()} de ${nomeDoMes} de ${data.getFullYear()}` +
         ` ${data.getHours()}:${data.getMinutes()}`);
 }
+
+*/
