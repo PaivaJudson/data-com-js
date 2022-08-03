@@ -1,6 +1,37 @@
 const h1 = document.querySelector(".container h1");
 const data = new Date();
 
+h1.innerHTML = criarData(data);
+
+
+function getDiaSemanaTexto(diaSemana) {
+    const diasSemana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira'];
+    return diasSemana[diaSemana];
+}
+
+function getNomeMes(numero) {
+    const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+    return meses[numero];
+}
+
+function criarData(data) {
+
+    const diaSemana = data.getDay();
+    const numeroMes = data.getMonth();
+
+    const nomeDiaSemana = getDiaSemanaTexto(diaSemana);
+    const nomeDoMes = getNomeMes(numeroMes);
+
+
+    return (`${nomeDiaSemana}, ${data.getDate()} de ${nomeDoMes} de ${data.getFullYear()}` +
+        ` ${data.getHours()}:${data.getMinutes()}`);
+}
+
+
+/*
+const h1 = document.querySelector(".container h1");
+const data = new Date();
+
 const opcoes = {
     dateStyle: 'full',
     timeStyle: 'short'
@@ -8,7 +39,7 @@ const opcoes = {
 
 h1.innerHTML = data.toLocaleString('pt-BR', opcoes);
 
-
+*/
 
 
 /*
